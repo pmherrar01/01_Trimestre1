@@ -17,7 +17,7 @@
       gap: 20px;
     }
 
-    #div1, #div2 {
+    #div1, #div2, #div3, #div4 {
       width: 150px;
       height: 150px;
       border: 2px solid black;
@@ -28,7 +28,7 @@
     }
 
     img {
-      width: 50px;
+      width: 100px;
       cursor: grab;
     }
   </style>
@@ -47,9 +47,9 @@
       ev.dataTransfer.setData("text", ev.target.id);
     }
 
-    // Función que se ejecuta al soltar la imagen sobre un div
+    // Función que se ejecuta al soltar la imagen 
     function soltar(ev) {
-      ev.preventDefault(); // Previene el comportamiento por defecto
+      //ev.preventDefault(); // Previene el comportamiento por defecto
 
       // Recupera la información guardada en el drag
       // Debe ser el mismo tipo que se usó en setData ("text")
@@ -69,11 +69,13 @@
     <!-- Contenedores de destino donde se puede soltar la imagen -->
     <div id="div1" ondrop="soltar(event)" ondragover="allowDrop(event)"></div>
     <div id="div2" ondrop="soltar(event)" ondragover="allowDrop(event)"></div>
+    <div id="div3" ></div>
+    <div id="div4" ondrop="soltar(event)" ondragover="allowDrop(event)"></div>
   </main>
 
   <footer>
     <!-- Imagen que se puede arrastrar -->
-    <img id="drag1" src="icono.jpg" draggable="true" ondragstart="drag(event)">
+    <img id="drag1" src="images.jpg" draggable="true" ondragstart="drag(event)">
   </footer>
 </body>
 </html>
